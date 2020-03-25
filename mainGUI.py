@@ -37,7 +37,7 @@ class Ui_MainWindow(object):
         self.groupBox_3.setObjectName("groupBox_3")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.groupBox_3)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.img1_original = ImageModel(self.groupBox_3)
+        self.img1_original = ImageView(self.groupBox_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -51,7 +51,7 @@ class Ui_MainWindow(object):
         self.groupBox_2.setObjectName("groupBox_2")
         self.gridLayout = QtWidgets.QGridLayout(self.groupBox_2)
         self.gridLayout.setObjectName("gridLayout")
-        self.img1_updated = ImageModel(self.groupBox_2)
+        self.img1_updated = ImageView(self.groupBox_2)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -114,7 +114,7 @@ class Ui_MainWindow(object):
         self.groupBox_5.setObjectName("groupBox_5")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.groupBox_5)
         self.gridLayout_5.setObjectName("gridLayout_5")
-        self.img2_original = ImageModel(self.groupBox_5)
+        self.img2_original = ImageView(self.groupBox_5)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -128,7 +128,7 @@ class Ui_MainWindow(object):
         self.groupBox_6.setObjectName("groupBox_6")
         self.gridLayout_6 = QtWidgets.QGridLayout(self.groupBox_6)
         self.gridLayout_6.setObjectName("gridLayout_6")
-        self.img2_updated = ImageModel(self.groupBox_6)
+        self.img2_updated = ImageView(self.groupBox_6)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -377,7 +377,7 @@ class Ui_MainWindow(object):
         self.gridLayout_7.setObjectName("gridLayout_7")
         self.gridLayout_17 = QtWidgets.QGridLayout()
         self.gridLayout_17.setObjectName("gridLayout_17")
-        self.output_img1 = ImageModel(self.groupBox_8)
+        self.output_img1 = ImageView(self.groupBox_8)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -406,7 +406,7 @@ class Ui_MainWindow(object):
         self.gridLayout_8.setObjectName("gridLayout_8")
         self.gridLayout_18 = QtWidgets.QGridLayout()
         self.gridLayout_18.setObjectName("gridLayout_18")
-        self.output_img2 = ImageModel(self.groupBox_9)
+        self.output_img2 = ImageView(self.groupBox_9)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -499,7 +499,7 @@ class Ui_MainWindow(object):
         self.actionImage1.setText(_translate("MainWindow", "Image1"))
         self.actionImage2.setText(_translate("MainWindow", "Image2"))
 
-from imageModel import ImageModel
+from pyqtgraph import ImageView
 
 if __name__ == "__main__":
     import sys
