@@ -49,7 +49,7 @@
                </property>
                <layout class="QGridLayout" name="gridLayout_2">
                 <item row="0" column="0">
-                 <widget class="ImageModel" name="img1_original" native="true">
+                 <widget class="ImageView" name="img1_original" native="true">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                     <horstretch>0</horstretch>
@@ -74,7 +74,7 @@
                </property>
                <layout class="QGridLayout" name="gridLayout">
                 <item row="0" column="0">
-                 <widget class="ImageModel" name="img1_updated" native="true">
+                 <widget class="ImageView" name="img1_updated" native="true">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                     <horstretch>0</horstretch>
@@ -210,7 +210,7 @@
                </property>
                <layout class="QGridLayout" name="gridLayout_5">
                 <item row="0" column="0">
-                 <widget class="ImageModel" name="img2_original" native="true">
+                 <widget class="ImageView" name="img2_original" native="true">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                     <horstretch>0</horstretch>
@@ -235,7 +235,7 @@
                </property>
                <layout class="QGridLayout" name="gridLayout_6">
                 <item row="0" column="0">
-                 <widget class="ImageModel" name="img2_updated" native="true">
+                 <widget class="ImageView" name="img2_updated" native="true">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                     <horstretch>0</horstretch>
@@ -922,7 +922,7 @@
                   <item row="0" column="0">
                    <layout class="QGridLayout" name="gridLayout_17">
                     <item row="0" column="0">
-                     <widget class="ImageModel" name="output_img1" native="true">
+                     <widget class="ImageView" name="output_img1" native="true">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                         <horstretch>0</horstretch>
@@ -973,7 +973,7 @@
                   <item row="0" column="0">
                    <layout class="QGridLayout" name="gridLayout_18">
                     <item row="0" column="0">
-                     <widget class="ImageModel" name="output_img2" native="true">
+                     <widget class="ImageView" name="output_img2" native="true">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                         <horstretch>0</horstretch>
@@ -1067,9 +1067,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>ImageModel</class>
+   <class>ImageView</class>
    <extends>QWidget</extends>
-   <header location="global">imageModel.h</header>
+   <header>pyqtgraph.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

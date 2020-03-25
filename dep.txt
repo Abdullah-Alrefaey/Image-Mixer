@@ -1,0 +1,2 @@
+pip install pyqtgraph
+pip install opencv-python

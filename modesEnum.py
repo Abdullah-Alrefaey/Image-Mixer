@@ -7,6 +7,9 @@ class Modes(enum.Enum):
     realAndImaginary = "testRealAndImagMode"
     magnitudeAndUniformPhase = "testMagAndUniPhaseMode"
     phaseAndUniformMagnitude = "testPhaseAndUniMagMode"
+    uniformMagnitudeAndUniformPhase = "testUniMagAndUniPhaseMode"
+    uniformMagnitudeAndPhase = "testUniMagAndPhase"
+    uniformPhaseAndMagnitude = "testUniPhaseAndMag"
 
 # How to use enum?
 # Just type enumName.enumElement
