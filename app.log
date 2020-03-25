@@ -1,0 +1,20 @@
+202 - root - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "D:/Study/Courses/Python/DSP Tasks - 3rd Year/sbe309-2020-task3-Abdullah-Alrefaey/main.py", line 196, in updateComboStatus
+    self.displayImage(mixOutput, self.outputImages[outID])
+  File "D:/Study/Courses/Python/DSP Tasks - 3rd Year/sbe309-2020-task3-Abdullah-Alrefaey/main.py", line 126, in displayImage
+    widget.setImage(data)
+  File "C:\Users\Refaey\AppData\Local\Programs\Python\Python37\lib\site-packages\pyqtgraph\imageview\ImageView.py", line 251, in setImage
+    "  %s" % str(required))
+TypeError: Image must be NumPy array or any object that provides compatible attributes/methods:
+  ['dtype', 'max', 'min', 'ndim', 'shape', 'size']
+202 - root - ERROR - Exception occurred
+Traceback (most recent call last):
+  File "D:/Study/Courses/Python/DSP Tasks - 3rd Year/sbe309-2020-task3-Abdullah-Alrefaey/main.py", line 196, in updateComboStatus
+    self.displayImage(mixOutput, self.outputImages[outID])
+  File "D:/Study/Courses/Python/DSP Tasks - 3rd Year/sbe309-2020-task3-Abdullah-Alrefaey/main.py", line 126, in displayImage
+    widget.setImage(data)
+  File "C:\Users\Refaey\AppData\Local\Programs\Python\Python37\lib\site-packages\pyqtgraph\imageview\ImageView.py", line 251, in setImage
+    "  %s" % str(required))
+TypeError: Image must be NumPy array or any object that provides compatible attributes/methods:
+  ['dtype', 'max', 'min', 'ndim', 'shape', 'size']
