@@ -19,3 +19,16 @@ Starter Template for Magnitude Phase Mixer Task
 ### Modes.realAndImaginary passed successfully
 
 ## Do not forget to update the dep.txt file
+
+# Results
+## Case #1:
+### Mixing 100% Magnitude of Image1 And 0% Phase of Image2 
+![Results 1](results/1.png)
+
+## Case #2:
+### Mixing 0% Real of Image1 And 100% Imaginary of Image2 
+![Results 2](results/2.png)
+
+## Case #3:
+### Mixing 70% Real of Image1 And 70% Imaginary of Image2 
+![Results 3](results/3.png)
