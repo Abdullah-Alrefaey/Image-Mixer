@@ -65,4 +65,4 @@ class ImageModel():
             combined = realMix + imaginaryMix * 1j
             mixInverse = np.real(np.fft.ifft2(combined))
 
-        return mixInverse
+        return abs(mixInverse)

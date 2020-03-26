@@ -1,6 +1,6 @@
 ### Write your name and ID
 ## Name: Abdullah Mohammed Alrefaey
-## ID: Section #2B.N: 8
+## ID: Section #2 - B.N: 8
 
 # MagnitudePhaseMixerTemplate
 Starter Template for Magnitude Phase Mixer Task

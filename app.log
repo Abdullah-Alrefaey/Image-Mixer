@@ -1,0 +1,38 @@
+79 - INFO - The Application started successfully
+87 - INFO - Browsing the files...
+102 - INFO - Added Image1: test.jpg successfully
+87 - INFO - Browsing the files...
+106 - WARNING - Warning!!. Image sizes must be the same, please upload another image
+87 - INFO - Browsing the files...
+110 - INFO - Added Image2: test2.jpg successfully
+114 - INFO - ComboBoxes have been enabled successfully
+263 - INFO - ComboBoxes has been adjusted
+263 - INFO - ComboBoxes has been adjusted
+263 - INFO - ComboBoxes has been adjusted
+263 - INFO - ComboBoxes has been adjusted
+263 - INFO - ComboBoxes has been adjusted
+263 - INFO - ComboBoxes has been adjusted
+263 - INFO - ComboBoxes has been adjusted
+263 - INFO - ComboBoxes has been adjusted
+263 - INFO - ComboBoxes has been adjusted
+217 - INFO - Mixing 0.0 magnitude From Image1 And 0.6 phase From Image2
+219 - INFO - Output1 has been generated and displayed
+263 - INFO - ComboBoxes has been adjusted
+217 - INFO - Mixing 0.0 magnitude From Image1 And 0.7 phase From Image2
+219 - INFO - Output1 has been generated and displayed
+263 - INFO - ComboBoxes has been adjusted
+217 - INFO - Mixing 0.0 magnitude From Image1 And 0.8 phase From Image2
+219 - INFO - Output1 has been generated and displayed
+263 - INFO - ComboBoxes has been adjusted
+217 - INFO - Mixing 0.0 magnitude From Image1 And 0.9 phase From Image2
+219 - INFO - Output1 has been generated and displayed
+263 - INFO - ComboBoxes has been adjusted
+217 - INFO - Mixing 0.0 magnitude From Image1 And 1.0 phase From Image2
+219 - INFO - Output1 has been generated and displayed
+263 - INFO - ComboBoxes has been adjusted
+263 - INFO - ComboBoxes has been adjusted
+217 - INFO - Mixing 0.0 real From Image1 And 1.0 imaginary From Image2
+219 - INFO - Output1 has been generated and displayed
+263 - INFO - ComboBoxes has been adjusted
+217 - INFO - Mixing 0.0 real From Image1 And 1.0 imaginary From Image2
+219 - INFO - Output2 has been generated and displayed
