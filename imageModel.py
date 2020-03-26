@@ -60,7 +60,7 @@ class ImageModel():
             I2 = imageToBeMixed.imaginary
 
             realMix = w1*R1 + (1-w1)*R2
-            imaginaryMix = w2*I1 + (1-w2)*I2
+            imaginaryMix = (1-w2)*I1 + w2*I2
 
             combined = realMix + imaginaryMix * 1j
             mixInverse = np.real(np.fft.ifft2(combined))
