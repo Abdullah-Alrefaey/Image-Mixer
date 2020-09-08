@@ -8,17 +8,18 @@ import cv2
 from modesEnum import Modes
 from imageModel import ImageModel
 
-#importing module
+# importing module
 import logging
 
-#Create and configure logger
+# Create and configure logger
 logging.basicConfig(level=logging.DEBUG,
                     filename="app.log",
-					format='%(lineno)s - %(levelname)s - %(message)s',
-					filemode='w')
+                    format='%(lineno)s - %(levelname)s - %(message)s',
+                    filemode='w')
 
-#Creating an object
-logger=logging.getLogger()
+# Creating an object
+logger = logging.getLogger()
+
 
 # choose item from combo
 # change combo content
@@ -40,7 +41,8 @@ class imagesMixer(m.Ui_MainWindow):
         self.updatedImages = [self.img1_updated, self.img2_updated]
         self.outputImages = [self.output_img1, self.output_img2]
         self.imagesModels = [..., ...]
-        self.imageWidgets = [self.img1_original, self.img2_original, self.img1_updated, self.img2_updated, self.output_img1, self.output_img2]
+        self.imageWidgets = [self.img1_original, self.img2_original, self.img1_updated, self.img2_updated,
+                             self.output_img1, self.output_img2]
 
         self.heights = [..., ...]
         self.weights = [..., ...]
@@ -54,7 +56,8 @@ class imagesMixer(m.Ui_MainWindow):
         self.sliders = [self.slider_comp1, self.slider_comp2]
 
         # combos and sliders list
-        self.components = [self.combo_select_img1, self.combo_select_img2, self.combo_select_mode1, self.combo_select_mode2, self.slider_comp1, self.slider_comp2, self.combo_output]
+        self.components = [self.combo_select_img1, self.combo_select_img2, self.combo_select_mode1,
+                           self.combo_select_mode2, self.slider_comp1, self.slider_comp2, self.combo_output]
 
         # Setup Load Connections
         self.actionImage1.triggered.connect(lambda: self.loadFile(0))
@@ -77,6 +80,7 @@ class imagesMixer(m.Ui_MainWindow):
         self.setupImagesView()
         # self.componentCombos[comboID + 1].setItemData(1, QtCore.QSize(0, 0), QtCore.Qt.SizeHintRole)
         logger.info("The Application started successfully")
+
     def loadFile(self, imgID):
         """
         Load the File from User
@@ -86,7 +90,8 @@ class imagesMixer(m.Ui_MainWindow):
         # Open File & Check if it was loaded correctly
         logger.info("Browsing the files...")
         repo_path = "D:\Study\Courses\Python\DSP Tasks - 3rd Year\sbe309-2020-task3-Abdullah-Alrefaey\images"
-        self.filename, self.format = QtWidgets.QFileDialog.getOpenFileName(None, "Load Image", repo_path, "*.jpg;;" "*.jpeg;;" "*.png;;")
+        self.filename, self.format = QtWidgets.QFileDialog.getOpenFileName(None, "Load Image", repo_path,
+                                                                           "*.jpg;;" "*.jpeg;;" "*.png;;")
         imgName = self.filename.split('/')[-1]
         if self.filename == "":
             pass
@@ -99,20 +104,20 @@ class imagesMixer(m.Ui_MainWindow):
                 # Create and Display Original Image
                 self.displayImage(self.imagesModels[imgID].imgByte, self.inputImages[imgID])
                 self.updateCombos[imgID].setEnabled(True)
-                logger.info(f"Added Image{imgID+1}: {imgName} successfully")
+                logger.info(f"Added Image{imgID + 1}: {imgName} successfully")
             else:
                 if self.heights[1] != self.heights[0] or self.weights[1] != self.weights[0]:
-                    self.showMessage("Warning!!", "Image sizes must be the same, please upload another image", QMessageBox.Ok, QMessageBox.Warning)
+                    self.showMessage("Warning!!", "Image sizes must be the same, please upload another image",
+                                     QMessageBox.Ok, QMessageBox.Warning)
                     logger.warning("Warning!!. Image sizes must be the same, please upload another image")
                 else:
                     self.displayImage(self.imagesModels[imgID].imgByte, self.inputImages[imgID])
                     self.updateCombos[imgID].setEnabled(True)
-                    logger.info(f"Added Image{imgID+1}: {imgName} successfully")
+                    logger.info(f"Added Image{imgID + 1}: {imgName} successfully")
 
             if self.updateCombos[0].isEnabled() and self.updateCombos[1].isEnabled():
                 self.enableOutputCombos()
                 logger.info("ComboBoxes have been enabled successfully")
-
 
     def setupImagesView(self):
         """
@@ -136,7 +141,8 @@ class imagesMixer(m.Ui_MainWindow):
         :return:
         """
         widget.setImage(data)
-        widget.view.setRange(xRange=[0, self.imagesModels[0].imgShape[0]], yRange=[0, self.imagesModels[0].imgShape[1]], padding=0)
+        widget.view.setRange(xRange=[0, self.imagesModels[0].imgShape[0]], yRange=[0, self.imagesModels[0].imgShape[1]],
+                             padding=0)
         widget.ui.roiPlot.hide()
 
     def updateCombosChanged(self, id):
@@ -157,8 +163,7 @@ class imagesMixer(m.Ui_MainWindow):
         elif selectedComponent == "imaginary":
             self.displayImage(imaginary, self.updatedImages[id])
 
-        logger.info(f"Viewing {selectedComponent} Component Of Image{id+1}")
-
+        logger.info(f"Viewing {selectedComponent} Component Of Image{id + 1}")
 
     def updateComboStatus(self):
         """
@@ -183,49 +188,60 @@ class imagesMixer(m.Ui_MainWindow):
         try:
             if componentOne == "magnitude":
                 if componentTwo == "phase":
-                    mixOutput = self.imagesModels[imgIndex1].mix(self.imagesModels[imgIndex2], self.sliderOneValue, self.sliderTwoValue, Modes.magnitudeAndPhase)
+                    mixOutput = self.imagesModels[imgIndex1].mix(self.imagesModels[imgIndex2], self.sliderOneValue,
+                                                                 self.sliderTwoValue, Modes.magnitudeAndPhase)
                 if componentTwo == "uniform phase":
-                    mixOutput = self.imagesModels[imgIndex1].mix(self.imagesModels[imgIndex2], self.sliderOneValue, self.sliderTwoValue, Modes.magnitudeAndUniformPhase)
+                    mixOutput = self.imagesModels[imgIndex1].mix(self.imagesModels[imgIndex2], self.sliderOneValue,
+                                                                 self.sliderTwoValue, Modes.magnitudeAndUniformPhase)
 
             elif componentOne == "phase":
                 if componentTwo == "magnitude":
-                    mixOutput = self.imagesModels[imgIndex2].mix(self.imagesModels[imgIndex1], self.sliderTwoValue, self.sliderOneValue, Modes.magnitudeAndPhase)
+                    mixOutput = self.imagesModels[imgIndex2].mix(self.imagesModels[imgIndex1], self.sliderTwoValue,
+                                                                 self.sliderOneValue, Modes.magnitudeAndPhase)
                 elif componentTwo == "uniform magnitude":
-                    mixOutput = self.imagesModels[imgIndex2].mix(self.imagesModels[imgIndex1], self.sliderOneValue, self.sliderTwoValue, Modes.phaseAndUniformMagnitude)
+                    mixOutput = self.imagesModels[imgIndex2].mix(self.imagesModels[imgIndex1], self.sliderOneValue,
+                                                                 self.sliderTwoValue, Modes.phaseAndUniformMagnitude)
 
             elif componentOne == "real":
                 if componentTwo == "imaginary":
-                    mixOutput = self.imagesModels[imgIndex1].mix(self.imagesModels[imgIndex2], self.sliderOneValue, self.sliderTwoValue, Modes.realAndImaginary)
+                    mixOutput = self.imagesModels[imgIndex1].mix(self.imagesModels[imgIndex2], self.sliderOneValue,
+                                                                 self.sliderTwoValue, Modes.realAndImaginary)
 
             elif componentOne == "imaginary":
                 if componentTwo == "real":
-                    mixOutput = self.imagesModels[imgIndex2].mix(self.imagesModels[imgIndex1], self.sliderTwoValue, self.sliderOneValue, Modes.realAndImaginary)
+                    mixOutput = self.imagesModels[imgIndex2].mix(self.imagesModels[imgIndex1], self.sliderTwoValue,
+                                                                 self.sliderOneValue, Modes.realAndImaginary)
 
             elif componentOne == "uniform phase":
                 if componentTwo == "magnitude":
-                    mixOutput = self.imagesModels[imgIndex2].mix(self.imagesModels[imgIndex1], self.sliderTwoValue, self.sliderOneValue, Modes.magnitudeAndUniformPhase)
+                    mixOutput = self.imagesModels[imgIndex2].mix(self.imagesModels[imgIndex1], self.sliderTwoValue,
+                                                                 self.sliderOneValue, Modes.magnitudeAndUniformPhase)
                 elif componentOne == "uniform magnitude":
-                    mixOutput = self.imagesModels[imgIndex2].mix(self.imagesModels[imgIndex1], self.sliderTwoValue, self.sliderOneValue, Modes.uniformPhaseAndUniformMagnitude)
+                    mixOutput = self.imagesModels[imgIndex2].mix(self.imagesModels[imgIndex1], self.sliderTwoValue,
+                                                                 self.sliderOneValue,
+                                                                 Modes.uniformPhaseAndUniformMagnitude)
 
             elif componentOne == "uniform magnitude":
                 if componentTwo == "phase":
-                    mixOutput = self.imagesModels[imgIndex1].mix(self.imagesModels[imgIndex2], self.sliderOneValue, self.sliderTwoValue, Modes.uniformMagnitudeAndPhase)
+                    mixOutput = self.imagesModels[imgIndex1].mix(self.imagesModels[imgIndex2], self.sliderOneValue,
+                                                                 self.sliderTwoValue, Modes.uniformMagnitudeAndPhase)
                 elif componentTwo == "uniform phase":
-                    mixOutput = self.imagesModels[imgIndex1].mix(self.imagesModels[imgIndex2], self.sliderOneValue, self.sliderTwoValue, Modes.uniformMagnitudeAndUniformPhase)
+                    mixOutput = self.imagesModels[imgIndex1].mix(self.imagesModels[imgIndex2], self.sliderOneValue,
+                                                                 self.sliderTwoValue,
+                                                                 Modes.uniformMagnitudeAndUniformPhase)
 
             if type(mixOutput) != type(...):
-                logger.info(f"Mixing {self.sliderOneValue} {componentOne} From Image{imgIndex1+1} And {self.sliderTwoValue} {componentTwo} From Image{imgIndex2+1}")
+                logger.info(
+                    f"Mixing {self.sliderOneValue} {componentOne} From Image{imgIndex1 + 1} And {self.sliderTwoValue} {componentTwo} From Image{imgIndex2 + 1}")
                 self.displayImage(mixOutput, self.outputImages[outID])
-                logger.info(f"Output{outID+1} has been generated and displayed")
+                logger.info(f"Output{outID + 1} has been generated and displayed")
 
         except Exception as e:
-                logger.error("Exception occurred", exc_info=True)
-
+            logger.error("Exception occurred", exc_info=True)
 
     def enableOutputCombos(self):
         for item in self.components:
             item.setEnabled(True)
-
 
     def adjustComboBox(self, comp1, comp2):
         """
